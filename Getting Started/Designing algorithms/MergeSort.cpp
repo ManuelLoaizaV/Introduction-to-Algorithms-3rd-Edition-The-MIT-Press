@@ -26,12 +26,21 @@ void Merge(int A[], int p, int q, int r) {
 	}
 }
 
+void MergeSort(int A[], int p, int r) {
+	if (p < r) {
+		int q = (p + r) / 2;
+		MergeSort(A, p, q);
+		MergeSort(A, q + 1, r);
+		Merge(A, p, q, r);
+	}
+}
+
 int main() {
 	int n;
 	cin >> n;
 	int A[n];
 	for (int i = 0; i < n; i++) cin >> A[i];
-	Merge(A, 0, (n - 1) / 2, n - 1);
+	MergeSort(A, 0, n - 1);
 	for (int i = 0; i < n; i++) cout << A[i] << " ";
 	return 0;
 }
