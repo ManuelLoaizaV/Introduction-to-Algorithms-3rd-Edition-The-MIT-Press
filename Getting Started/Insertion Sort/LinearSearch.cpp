@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void linearSearch(int &A[], int &v) {
+void LinearSearch(int &A[], int &v) {
 	for (int i = 0; i < n; i++) {
 		if (A[i] == v) {
 			cout << i + 1 << endl;
@@ -19,6 +19,6 @@ int main() {
 	for (int i = 0; i < n; i+++) cin >> A[i];
 	int v;
 	cin >> v;
-	linearSearch(A, v);
+	LinearSearch(A, v);
 	return 0;
 }
